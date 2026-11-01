@@ -1,0 +1,25 @@
+{
+    "targets": [ "swap" ],
+    "passes": [
+        {
+            "name": "blur",
+            "intensity": 1.0,
+            "inputs": [ { "name": "DiffuseSampler", "target": "minecraft:main" } ],
+            "output": "swap",
+            "uniforms": [
+                { "name": "BlurDir", "values": [ 1.0, 0.0 ] },
+                { "name": "Radius", "values": [ 4.0 ] }
+            ]
+        },
+        {
+            "name": "blur",
+            "intensity": 1.0,
+            "inputs": [ { "name": "DiffuseSampler", "target": "swap" } ],
+            "output": "minecraft:main",
+            "uniforms": [
+                { "name": "BlurDir", "values": [ 0.0, 1.0 ] },
+                { "name": "Radius", "values": [ 4.0 ] }
+            ]
+        }
+    ]
+}
